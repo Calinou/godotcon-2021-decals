@@ -1,0 +1,256 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://decals/splat01.png" type="Texture2D" id=1]
+[ext_resource path="res://decals/caustics/caust00.png" type="Texture2D" id=2]
+[ext_resource path="res://caustics.gd" type="Script" id=3]
+[ext_resource path="res://fps_label.gd" type="Script" id=4]
+[ext_resource path="res://decals/white_circle_soft.png" type="Texture2D" id=5]
+
+[sub_resource type="PhysicalSkyMaterial" id=1]
+
+[sub_resource type="Sky" id=2]
+sky_material = SubResource( 1 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+sky = SubResource( 2 )
+tonemap_mode = 3
+tonemap_white = 6.0
+ssao_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = true
+sdfgi_bounce_feedback = 1.0
+sdfgi_cascades = 0
+sdfgi_max_distance = 204.8
+sdfgi_y_scale = 2
+fog_enabled = true
+fog_light_color = Color( 0.501961, 0.6, 0.701961, 1 )
+fog_aerial_perspective = 1.0
+
+[sub_resource type="PlaneMesh" id=4]
+size = Vector2( 4096, 4096 )
+subdivide_width = 4
+subdivide_depth = 4
+
+[sub_resource type="BoxMesh" id=5]
+
+[sub_resource type="StandardMaterial3D" id=6]
+albedo_color = Color( 0.623529, 1, 0.67451, 1 )
+
+[sub_resource type="BoxMesh" id=7]
+size = Vector3( 1.99, 1.99, 1.99 )
+
+[sub_resource type="StandardMaterial3D" id=8]
+albedo_color = Color( 0.768627, 0.403922, 1, 1 )
+
+[sub_resource type="SphereMesh" id=9]
+
+[sub_resource type="StandardMaterial3D" id=10]
+albedo_color = Color( 1, 0.639216, 0.52549, 1 )
+
+[sub_resource type="BoxMesh" id=11]
+size = Vector3( 16, 5, 2 )
+
+[sub_resource type="BoxMesh" id=12]
+size = Vector3( 12, 1, 12 )
+
+[sub_resource type="OpenSimplexNoise" id=13]
+
+[sub_resource type="NoiseTexture" id=14]
+seamless = true
+as_normal_map = true
+noise = SubResource( 13 )
+
+[sub_resource type="StandardMaterial3D" id=15]
+transparency = 1
+albedo_color = Color( 1, 1, 1, 0.54902 )
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+normal_enabled = true
+normal_texture = SubResource( 14 )
+
+[sub_resource type="BoxMesh" id=16]
+material = SubResource( 15 )
+size = Vector3( 16, 1.25, 12 )
+
+[sub_resource type="CapsuleMesh" id=17]
+
+[sub_resource type="OpenSimplexNoise" id=18]
+octaves = 9
+
+[sub_resource type="NoiseTexture" id=19]
+seamless = true
+noise = SubResource( 18 )
+
+[sub_resource type="StandardMaterial3D" id=20]
+albedo_texture = SubResource( 19 )
+
+[node name="Node3D" type="Node3D"]
+script = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+script = null
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+gi_mode = 1
+mesh = SubResource( 4 )
+surface_material_override/0 = null
+script = null
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+gi_mode = 1
+mesh = SubResource( 5 )
+surface_material_override/0 = SubResource( 6 )
+script = null
+
+[node name="BoxTilted" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, -1, 3 )
+gi_mode = 1
+mesh = SubResource( 7 )
+surface_material_override/0 = SubResource( 8 )
+script = null
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+gi_mode = 1
+mesh = SubResource( 9 )
+surface_material_override/0 = SubResource( 10 )
+script = null
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform( -0.773862, 0.439551, -0.455997, 0, 0.719971, 0.694004, 0.633355, 0.537063, -0.557158, -2.1275, 3.23794, -2.59948 )
+shadow_enabled = true
+shadow_bias = 0.005
+shadow_blur = 1.5
+script = null
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform( -0.871298, -0.00553322, -0.490724, 0, 0.999937, -0.0112749, 0.490755, -0.00982381, -0.871242, -12.3881, 1.1203, -28.2008 )
+script = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+blend_times = [  ]
+script = null
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform( -0.998248, 0.0115561, -0.0580276, 0, 0.980741, 0.195313, 0.0591671, 0.194971, -0.979023, 0, 1, -0.196025 )
+texture_albedo = ExtResource( 1 )
+modulate = Color( 0.0313726, 0.0509804, 1, 1 )
+upper_fade = 0.424264
+lower_fade = 8.07259
+script = null
+
+[node name="PoolCaustics" type="Decal" parent="."]
+transform = Transform( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -6.00856, 2.15045, -20.0479 )
+extents = Vector3( 1.5, 1.5, 1.5 )
+texture_emission = ExtResource( 2 )
+emission_energy = 0.08
+upper_fade = 0.0
+lower_fade = 2.0
+script = ExtResource( 3 )
+
+[node name="PoolCaustics2" type="Decal" parent="."]
+transform = Transform( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -4.50856, 2.15045, -22.6479 )
+extents = Vector3( 1.5, 1.5, 1.5 )
+texture_emission = ExtResource( 2 )
+emission_energy = 0.08
+upper_fade = 0.0
+lower_fade = 2.0
+script = ExtResource( 3 )
+
+[node name="PoolCaustics3" type="Decal" parent="."]
+transform = Transform( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -7.51955, 2.15045, -24.371 )
+extents = Vector3( 1.5, 1.5, 1.5 )
+texture_emission = ExtResource( 2 )
+emission_energy = 0.08
+upper_fade = 2.0
+lower_fade = 1e-05
+script = ExtResource( 3 )
+
+[node name="PoolCaustics4" type="Decal" parent="."]
+transform = Transform( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -8.99316, 2.15045, -21.7737 )
+extents = Vector3( 1.5, 1.5, 1.5 )
+texture_emission = ExtResource( 2 )
+emission_energy = 0.08
+upper_fade = 2.0
+lower_fade = 1e-05
+script = ExtResource( 3 )
+
+[node name="FPSLabel" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 87.0
+offset_bottom = 48.0
+custom_font_sizes/font_size = 28
+structured_text_bidi_override_options = [  ]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PoolWall1" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -31 )
+gi_mode = 1
+mesh = SubResource( 11 )
+surface_material_override/0 = null
+script = null
+
+[node name="PoolWall2" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -17 )
+gi_mode = 1
+mesh = SubResource( 11 )
+surface_material_override/0 = null
+script = null
+
+[node name="PoolWall3" type="MeshInstance3D" parent="."]
+transform = Transform( -4.92785e-09, 0, 1, 0, 1, 0, -1, 0, 4.92785e-09, 2, 1, -24 )
+gi_mode = 1
+mesh = SubResource( 11 )
+surface_material_override/0 = null
+script = null
+
+[node name="PoolWall4" type="MeshInstance3D" parent="."]
+transform = Transform( -4.92785e-09, 0, 1, 0, 1, 0, -1, 0, 4.92785e-09, -16, 1, -24 )
+gi_mode = 1
+mesh = SubResource( 11 )
+surface_material_override/0 = null
+script = null
+
+[node name="PoolCeiling" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9, 2.9, -24 )
+gi_mode = 1
+mesh = SubResource( 12 )
+surface_material_override/0 = null
+script = null
+
+[node name="PoolWater" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.4, -24 )
+gi_mode = 1
+mesh = SubResource( 16 )
+surface_material_override/0 = null
+script = null
+
+[node name="Decal2" type="Decal" parent="."]
+transform = Transform( 0.986404, 0.0502488, -0.156469, 0, 0.952108, 0.305761, 0.16434, -0.301604, 0.939163, -11.1255, -0.892838, -15.6301 )
+texture_albedo = ExtResource( 5 )
+modulate = Color( 0, 100, 50, 0.01 )
+upper_fade = 1.0
+lower_fade = 1.0
+script = null
+
+[node name="Decal3" type="Decal" parent="."]
+transform = Transform( 0.986404, 0.0502488, -0.156469, 0, 0.952108, 0.305761, 0.16434, -0.301604, 0.939163, -9.12549, -0.892838, -15.6301 )
+texture_albedo = ExtResource( 5 )
+upper_fade = 1.0
+lower_fade = 1.0
+script = null
+
+[node name="Capsule" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5222, 0.0498247, -15.2143 )
+mesh = SubResource( 17 )
+surface_material_override/0 = SubResource( 20 )
+script = null
