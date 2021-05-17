@@ -123,13 +123,14 @@ script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform( -0.773862, 0.439551, -0.455997, 0, 0.719971, 0.694004, 0.633355, 0.537063, -0.557158, -2.1275, 3.23794, -2.59948 )
+light_bake_mode = 2
 shadow_enabled = true
 shadow_bias = 0.005
-shadow_blur = 1.5
+shadow_blur = 2.0
 script = null
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform( -0.871298, -0.00553322, -0.490724, 0, 0.999937, -0.0112749, 0.490755, -0.00982381, -0.871242, -12.3881, 1.1203, -28.2008 )
+transform = Transform( -0.207456, -0.177489, 0.962008, 0, 0.983403, 0.181436, -0.978245, 0.0376399, -0.204013, 12.1967, 2.96007, -12.7497 )
 script = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -149,6 +150,7 @@ transform = Transform( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012,
 extents = Vector3( 1.5, 1.5, 1.5 )
 texture_emission = ExtResource( 2 )
 emission_energy = 0.08
+normal_fade = 0.1
 upper_fade = 0.0
 lower_fade = 2.0
 script = ExtResource( 3 )
@@ -158,6 +160,7 @@ transform = Transform( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012,
 extents = Vector3( 1.5, 1.5, 1.5 )
 texture_emission = ExtResource( 2 )
 emission_energy = 0.08
+normal_fade = 0.1
 upper_fade = 0.0
 lower_fade = 2.0
 script = ExtResource( 3 )
@@ -167,6 +170,7 @@ transform = Transform( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012,
 extents = Vector3( 1.5, 1.5, 1.5 )
 texture_emission = ExtResource( 2 )
 emission_energy = 0.08
+normal_fade = 0.1
 upper_fade = 2.0
 lower_fade = 1e-05
 script = ExtResource( 3 )
@@ -176,6 +180,7 @@ transform = Transform( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012,
 extents = Vector3( 1.5, 1.5, 1.5 )
 texture_emission = ExtResource( 2 )
 emission_energy = 0.08
+normal_fade = 0.1
 upper_fade = 2.0
 lower_fade = 1e-05
 script = ExtResource( 3 )
@@ -234,7 +239,7 @@ mesh = SubResource( 16 )
 surface_material_override/0 = null
 script = null
 
-[node name="Decal2" type="Decal" parent="."]
+[node name="FakeLightCyan" type="Decal" parent="."]
 transform = Transform( 0.986404, 0.0502488, -0.156469, 0, 0.952108, 0.305761, 0.16434, -0.301604, 0.939163, -11.1255, -0.892838, -15.6301 )
 texture_albedo = ExtResource( 5 )
 modulate = Color( 0, 100, 50, 0.01 )
@@ -242,7 +247,7 @@ upper_fade = 1.0
 lower_fade = 1.0
 script = null
 
-[node name="Decal3" type="Decal" parent="."]
+[node name="FakeLightWhite" type="Decal" parent="."]
 transform = Transform( 0.986404, 0.0502488, -0.156469, 0, 0.952108, 0.305761, 0.16434, -0.301604, 0.939163, -9.12549, -0.892838, -15.6301 )
 texture_albedo = ExtResource( 5 )
 upper_fade = 1.0
