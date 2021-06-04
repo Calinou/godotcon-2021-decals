@@ -42,6 +42,9 @@ size = Vector2( 500, 1000 )
 size = Vector2( 200, 400 )
 
 [sub_resource type="PhysicalSkyMaterial" id=5]
+rayleigh_color = Color( 0.3, 0.3, 0.3, 1 )
+mie_color = Color( 0.819608, 0.819608, 0.819608, 1 )
+ground_color = Color( 0.23, 0.23, 0.23, 1 )
 
 [sub_resource type="Sky" id=6]
 sky_material = SubResource( 5 )
@@ -50,6 +53,8 @@ sky_material = SubResource( 5 )
 background_mode = 2
 sky = SubResource( 6 )
 fog_enabled = true
+fog_light_color = Color( 0.501961, 0.6, 0.701961, 1 )
+fog_density = 0.005
 fog_aerial_perspective = 1.0
 
 [node name="Terrain" type="Node3D"]
@@ -66,29 +71,29 @@ script = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0 )
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform( 0.705313, 0.04078, -0.707723, 0, 0.998344, 0.0575261, 0.708897, -0.0405739, 0.704145, -95.8807, 5.14658, 100.751 )
+transform = Transform( 0.705313, 0.04078, -0.707723, 0, 0.998344, 0.0575261, 0.708896, -0.0405739, 0.704145, -93.8807, 5.14658, 95.751 )
 script = null
 
 [node name="Plane1" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -349, -4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -349, -3, 0 )
 mesh = SubResource( 3 )
 surface_material_override/0 = null
 script = null
 
 [node name="Plane2" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 350, -4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 350, -3, 0 )
 mesh = SubResource( 3 )
 surface_material_override/0 = null
 script = null
 
 [node name="Plane3" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 300 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 300 )
 mesh = SubResource( 4 )
 surface_material_override/0 = null
 script = null
 
 [node name="Plane4" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, -299 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -299 )
 mesh = SubResource( 4 )
 surface_material_override/0 = null
 script = null
@@ -100,13 +105,12 @@ script = null
 [node name="Clouds" type="Decal" parent="."]
 extents = Vector3( 200, 50, 200 )
 texture_albedo = ExtResource( 2 )
-albedo_mix = 0.75
 distance_fade_begin = 50.0
 distance_fade_length = 50.0
 script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform( 0.963876, -0.187342, 0.189329, 0, 0.710826, 0.703368, -0.26635, -0.67796, 0.685148, -54.7783, 8.73534, 42.7632 )
+transform = Transform( -0.967916, -0.176737, 0.178611, 0, 0.710826, 0.703368, -0.251272, 0.680802, -0.68802, -54.7783, 8.73534, 42.7632 )
 shadow_enabled = true
 shadow_bias = 0.005
 shadow_blur = 2.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://decals/splat01.png" type="Texture2D" id=1]
 [ext_resource path="res://decals/caustics/caust00.png" type="Texture2D" id=2]
@@ -11,15 +11,181 @@
 [ext_resource path="res://decals/nobiax/1_normal.png" type="Texture2D" id=9]
 [ext_resource path="res://decals/nobiax/1.png" type="Texture2D" id=10]
 [ext_resource path="res://decals/splat01_wet_orm.png" type="Texture2D" id=11]
+[ext_resource path="res://addons/kenney_prototype_textures/dark/texture_03.png" type="Texture2D" id=12]
+[ext_resource path="res://decals/car_shadow.png" type="Texture2D" id=13]
 
-[sub_resource type="PhysicalSkyMaterial" id=1]
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Coil:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Transform( -0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera3D:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Transform( 0.8982, -0.0284015, 0.438668, 0, 0.997911, 0.0646095, -0.439587, -0.0580323, 0.896323, 2.68574, -0.46104, 2.42271 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Capsule:transform")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DirectionalLight3D:shadow_enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Car:transform")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6 ) ]
+}
 
-[sub_resource type="Sky" id=2]
-sky_material = SubResource( 1 )
+[sub_resource type="Animation" id=2]
+resource_name = "move_blob_object"
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera3D:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Transform( -0.698967, -0.100202, 0.708099, 0, 0.990136, 0.140112, -0.715153, 0.0979338, -0.692072, -6.7076, 0.0955604, -7.78628 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DirectionalLight3D:shadow_enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Car:transform")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0, 3, 6, 9 ),
+"transitions": PackedFloat32Array( -2, -2, -2, -2 ),
+"update": 0,
+"values": [ Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6 ), Transform( -2.29438e-08, 0.524892, -0.851169, -1, -4.37114e-08, 0, -3.72058e-08, 0.851169, 0.524892, -7.72268, -0.488295, -6.07885 ), Transform( 4.84313e-08, -0.963853, -0.266436, -1, 0, 0, 3.47437e-08, 0.266436, -0.963853, -9.68269, -0.488295, -3.86435 ), Transform( 0, -0.134439, 0.990922, -1, 0, 0, 0, -0.990922, -0.134439, -9.84135, 0.387868, -4.93218 ) ]
+}
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Animation" id=3]
+length = 6.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera3D:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 3 ),
+"transitions": PackedFloat32Array( -2, -2 ),
+"update": 0,
+"values": [ Transform( 0.8982, -0.027253, 0.438741, 0, 0.998076, 0.0619968, -0.439587, -0.0556855, 0.896472, 3.39127, -0.456424, 2.16016 ), Transform( 0.8982, -0.0284015, 0.438668, 0, 0.997911, 0.0646095, -0.439587, -0.0580323, 0.896323, 1.7144, -0.46104, 2.89809 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera3D:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Transform( 0.95546, 0.0527905, -0.29036, 0, 0.983872, 0.178878, 0.29512, -0.170911, 0.940049, -11.4712, 0.646901, -12.7406 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Capsule:transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0, 6 ),
+"transitions": PackedFloat32Array( -2, -2 ),
+"update": 0,
+"values": [ Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25853, 0.0498247, -16.4017 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Coil:transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 5 ),
+"transitions": PackedFloat32Array( -2, -2 ),
+"update": 0,
+"values": [ Transform( -0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917 ), Transform( -0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -0.926158, 1.5441, -23.1917 ) ]
+}
+
+[sub_resource type="PhysicalSkyMaterial" id=6]
+
+[sub_resource type="Sky" id=7]
+sky_material = SubResource( 6 )
+
+[sub_resource type="Environment" id=8]
 background_mode = 2
-sky = SubResource( 2 )
+sky = SubResource( 7 )
 tonemap_mode = 3
 tonemap_white = 6.0
 ssao_enabled = true
@@ -33,119 +199,158 @@ fog_enabled = true
 fog_light_color = Color( 0.501961, 0.6, 0.701961, 1 )
 fog_aerial_perspective = 1.0
 
-[sub_resource type="PlaneMesh" id=4]
+[sub_resource type="StandardMaterial3D" id=9]
+albedo_texture = ExtResource( 12 )
+uv1_scale = Vector3( 2048, 2048, 2048 )
+texture_filter = 5
+
+[sub_resource type="PlaneMesh" id=10]
+material = SubResource( 9 )
 size = Vector2( 4096, 4096 )
 subdivide_width = 4
 subdivide_depth = 4
 
-[sub_resource type="BoxMesh" id=5]
+[sub_resource type="BoxMesh" id=11]
 
-[sub_resource type="StandardMaterial3D" id=6]
+[sub_resource type="StandardMaterial3D" id=12]
 albedo_color = Color( 0.09, 0.07779, 0.0567, 1 )
 
-[sub_resource type="BoxMesh" id=7]
+[sub_resource type="BoxMesh" id=13]
 size = Vector3( 1.99, 1.99, 1.99 )
 
-[sub_resource type="OpenSimplexNoise" id=8]
+[sub_resource type="OpenSimplexNoise" id=14]
 
-[sub_resource type="NoiseTexture" id=9]
+[sub_resource type="NoiseTexture" id=15]
 seamless = true
 as_normal_map = true
 bump_strength = 32.0
-noise = SubResource( 8 )
+noise = SubResource( 14 )
 
-[sub_resource type="StandardMaterial3D" id=10]
+[sub_resource type="StandardMaterial3D" id=16]
 albedo_color = Color( 0.768627, 0.403922, 1, 1 )
 normal_enabled = true
-normal_texture = SubResource( 9 )
+normal_texture = SubResource( 15 )
 uv1_scale = Vector3( 3, 2, 1 )
 
-[sub_resource type="SphereMesh" id=11]
+[sub_resource type="SphereMesh" id=17]
 
-[sub_resource type="StandardMaterial3D" id=12]
+[sub_resource type="StandardMaterial3D" id=18]
 albedo_color = Color( 1, 0.639216, 0.52549, 1 )
 
-[sub_resource type="BoxMesh" id=13]
+[sub_resource type="BoxMesh" id=19]
+
+[sub_resource type="BoxMesh" id=20]
 size = Vector3( 16, 5, 2 )
 
-[sub_resource type="BoxMesh" id=14]
+[sub_resource type="BoxMesh" id=21]
 size = Vector3( 12, 1, 12 )
 
-[sub_resource type="OpenSimplexNoise" id=15]
+[sub_resource type="OpenSimplexNoise" id=22]
 
-[sub_resource type="NoiseTexture" id=16]
+[sub_resource type="NoiseTexture" id=23]
 seamless = true
 as_normal_map = true
-noise = SubResource( 15 )
+noise = SubResource( 22 )
 
-[sub_resource type="StandardMaterial3D" id=17]
+[sub_resource type="StandardMaterial3D" id=24]
 transparency = 1
 albedo_color = Color( 1, 1, 1, 0.54902 )
 metallic = 1.0
 metallic_specular = 1.0
 roughness = 0.0
 normal_enabled = true
-normal_texture = SubResource( 16 )
+normal_texture = SubResource( 23 )
 
-[sub_resource type="BoxMesh" id=18]
-material = SubResource( 17 )
+[sub_resource type="BoxMesh" id=25]
+material = SubResource( 24 )
 size = Vector3( 16, 1.25, 12 )
 
-[sub_resource type="CapsuleMesh" id=19]
+[sub_resource type="CapsuleMesh" id=26]
 
-[sub_resource type="OpenSimplexNoise" id=20]
+[sub_resource type="OpenSimplexNoise" id=27]
 octaves = 9
 
-[sub_resource type="NoiseTexture" id=21]
+[sub_resource type="NoiseTexture" id=28]
 seamless = true
-noise = SubResource( 20 )
+noise = SubResource( 27 )
 
-[sub_resource type="StandardMaterial3D" id=22]
-albedo_texture = SubResource( 21 )
+[sub_resource type="StandardMaterial3D" id=29]
+albedo_texture = SubResource( 28 )
 
-[sub_resource type="Curve" id=23]
+[sub_resource type="Curve" id=30]
 _data = [ Vector2( 0.0977012, 0.854545 ), 0.0, 0.0, 0, 0, Vector2( 0.189655, 0.363636 ), 0.0, 0.0, 0, 0, Vector2( 0.454023, 0.9 ), 0.0, 0.0, 0, 0, Vector2( 0.557471, 0.272727 ), 0.0, 0.0, 0, 0, Vector2( 0.724138, 0.727273 ), 0.0, 0.0, 0, 0, Vector2( 0.850575, 0.563636 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="TubeTrailMesh" id=24]
+[sub_resource type="TubeTrailMesh" id=31]
 radial_steps = 64
 sections = 16
 section_length = 0.081
-curve = SubResource( 23 )
+curve = SubResource( 30 )
+
+[sub_resource type="Curve" id=32]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.525 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="TubeTrailMesh" id=33]
+radial_steps = 32
+sections = 32
+section_length = 0.05
+curve = SubResource( 32 )
 
 [node name="Test" type="Node3D"]
 script = null
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform( 0.8982, -0.0284015, 0.438668, 0, 0.997911, 0.0646095, -0.439587, -0.0580323, 0.896323, 2.68574, -0.46104, 2.42271 )
+script = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move_blob_object"
+anims/RESET = SubResource( 1 )
+anims/move_blob_object = SubResource( 2 )
+anims/move_camera_wet = SubResource( 3 )
+anims/move_capsule = SubResource( 4 )
+anims/move_coil = SubResource( 5 )
+blend_times = [  ]
+script = null
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 8 )
 script = null
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 gi_mode = 1
-mesh = SubResource( 4 )
+mesh = SubResource( 10 )
 surface_material_override/0 = null
 script = null
 
 [node name="Box" type="MeshInstance3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
 gi_mode = 1
-mesh = SubResource( 5 )
-surface_material_override/0 = SubResource( 6 )
+mesh = SubResource( 11 )
+surface_material_override/0 = SubResource( 12 )
 script = null
 
 [node name="BoxTilted" type="MeshInstance3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, -0.922125, 3 )
 gi_mode = 1
-mesh = SubResource( 7 )
-surface_material_override/0 = SubResource( 10 )
+mesh = SubResource( 13 )
+surface_material_override/0 = SubResource( 16 )
 script = null
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
 layers = 2
 gi_mode = 1
-mesh = SubResource( 11 )
-surface_material_override/0 = SubResource( 12 )
+mesh = SubResource( 17 )
+surface_material_override/0 = SubResource( 18 )
+script = null
+
+[node name="Sphere2" type="MeshInstance3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3 )
+layers = 2
+gi_mode = 1
+mesh = SubResource( 19 )
+surface_material_override/0 = SubResource( 18 )
 script = null
 
 [node name="Paint" type="Decal" parent="."]
@@ -154,6 +359,16 @@ texture_albedo = ExtResource( 1 )
 modulate = Color( 0.898039, 1, 1, 0.0941176 )
 upper_fade = 0.424264
 lower_fade = 8.07259
+script = null
+
+[node name="PaintNormalFade" type="Decal" parent="."]
+transform = Transform( -0.99636, 0.0718171, -0.0459127, 0.0613589, 0.978176, 0.19851, 0.0591671, 0.194971, -0.979023, -0.113795, 0.379248, -1.47887 )
+layers = 3
+texture_albedo = ExtResource( 1 )
+modulate = Color( 0.00392157, 0.176471, 1, 1 )
+normal_fade = 0.5
+upper_fade = 0.0
+lower_fade = 0.0
 script = null
 
 [node name="Paint2" type="Decal" parent="."]
@@ -192,6 +407,30 @@ script = null
 
 [node name="WetPuddleLarge" type="Decal" parent="."]
 transform = Transform( 0.988127, 0.0740056, 0.13464, -0.0982182, 0.978162, 0.183174, -0.118143, -0.194224, 0.973817, 1.5386, -1.52881, -1.36057 )
+extents = Vector3( 2, 2, 2 )
+texture_albedo = ExtResource( 11 )
+texture_orm = ExtResource( 11 )
+modulate = Color( 1, 1, 1, 0.996078 )
+albedo_mix = 0.0
+upper_fade = 0.0
+lower_fade = 0.0
+cull_mask = 1048573
+script = null
+
+[node name="WetPuddleLarge2" type="Decal" parent="."]
+transform = Transform( 0.595224, 0.205253, -0.776904, -0.0982182, 0.978162, 0.183174, 0.797535, -0.032724, 0.602385, 3.5386, -1.52881, -0.36057 )
+extents = Vector3( 2, 2, 2 )
+texture_albedo = ExtResource( 11 )
+texture_orm = ExtResource( 11 )
+modulate = Color( 1, 1, 1, 0.996078 )
+albedo_mix = 0.0
+upper_fade = 0.0
+lower_fade = 0.0
+cull_mask = 1048573
+script = null
+
+[node name="WetPuddleLarge3" type="Decal" parent="."]
+transform = Transform( 0.978319, 0.200848, 0.0505067, -0.206292, 0.92354, 0.323292, 0.0182883, -0.326703, 0.94495, 1.9431, -1.52881, 1.00221 )
 extents = Vector3( 2, 2, 2 )
 texture_albedo = ExtResource( 11 )
 texture_orm = ExtResource( 11 )
@@ -283,17 +522,8 @@ script = null
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform( -0.773862, 0.439551, -0.455997, 0, 0.719971, 0.694004, 0.633355, 0.537063, -0.557158, -2.1275, 3.23794, -2.59948 )
 light_bake_mode = 2
-shadow_enabled = true
 shadow_bias = 0.005
 shadow_blur = 2.0
-script = null
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform( -0.207456, -0.177489, 0.962008, 0, 0.983403, 0.181436, -0.978245, 0.0376399, -0.204013, 12.1967, 2.96007, -12.7497 )
-script = null
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-blend_times = [  ]
 script = null
 
 [node name="PoolCaustics" type="Decal" parent="."]
@@ -341,6 +571,7 @@ lower_fade = 1e-05
 script = ExtResource( 3 )
 
 [node name="FPSLabel" type="Label" parent="."]
+visible = false
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 87.0
@@ -355,42 +586,42 @@ __meta__ = {
 [node name="PoolWall1" type="MeshInstance3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -31 )
 gi_mode = 1
-mesh = SubResource( 13 )
+mesh = SubResource( 20 )
 surface_material_override/0 = null
 script = null
 
 [node name="PoolWall2" type="MeshInstance3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -17 )
 gi_mode = 1
-mesh = SubResource( 13 )
+mesh = SubResource( 20 )
 surface_material_override/0 = null
 script = null
 
 [node name="PoolWall3" type="MeshInstance3D" parent="."]
 transform = Transform( -4.92785e-09, 0, 1, 0, 1, 0, -1, 0, 4.92785e-09, 2, 1, -24 )
 gi_mode = 1
-mesh = SubResource( 13 )
+mesh = SubResource( 20 )
 surface_material_override/0 = null
 script = null
 
 [node name="PoolWall4" type="MeshInstance3D" parent="."]
 transform = Transform( -4.92785e-09, 0, 1, 0, 1, 0, -1, 0, 4.92785e-09, -16, 1, -24 )
 gi_mode = 1
-mesh = SubResource( 13 )
+mesh = SubResource( 20 )
 surface_material_override/0 = null
 script = null
 
 [node name="PoolCeiling" type="MeshInstance3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9, 2.9, -24 )
 gi_mode = 1
-mesh = SubResource( 14 )
+mesh = SubResource( 21 )
 surface_material_override/0 = null
 script = null
 
 [node name="PoolWater" type="MeshInstance3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.4, -24 )
 gi_mode = 1
-mesh = SubResource( 18 )
+mesh = SubResource( 25 )
 surface_material_override/0 = null
 script = null
 
@@ -411,8 +642,8 @@ script = null
 
 [node name="Capsule" type="MeshInstance3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017 )
-mesh = SubResource( 19 )
-surface_material_override/0 = SubResource( 22 )
+mesh = SubResource( 26 )
+surface_material_override/0 = SubResource( 29 )
 script = null
 
 [node name="AreaFog" type="Decal" parent="."]
@@ -431,14 +662,31 @@ omni_range = 1.3
 script = null
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96098, -0.76884, 1.27299 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33894, -0.76884, -0.0555387 )
 extents = Vector3( 4, 4, 4 )
+origin_offset = Vector3( -0.298, 0.586, 1 )
 box_projection = true
 enable_shadows = true
 script = null
 
 [node name="Coil" type="MeshInstance3D" parent="."]
 transform = Transform( -0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917 )
-mesh = SubResource( 24 )
+mesh = SubResource( 31 )
 surface_material_override/0 = null
+script = null
+
+[node name="Car" type="MeshInstance3D" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6 )
+layers = 2
+mesh = SubResource( 33 )
+surface_material_override/0 = null
+script = null
+
+[node name="Decal" type="Decal" parent="Car"]
+transform = Transform( 8.74228e-08, -1, -4.37114e-08, -1, -8.74228e-08, -1.91069e-15, -2.68657e-16, 4.37114e-08, -1, 0.511465, 0, 0 )
+extents = Vector3( 1, 1, 0.5 )
+texture_albedo = ExtResource( 13 )
+upper_fade = 1.0
+lower_fade = 1.0
+cull_mask = 1048573
 script = null
