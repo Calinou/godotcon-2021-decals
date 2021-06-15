@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://decals/splat01.png" type="Texture2D" id=1]
 [ext_resource path="res://decals/caustics/caust00.png" type="Texture2D" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://decals/splat01_wet_orm.png" type="Texture2D" id=11]
 [ext_resource path="res://addons/kenney_prototype_textures/dark/texture_03.png" type="Texture2D" id=12]
 [ext_resource path="res://decals/car_shadow.png" type="Texture2D" id=13]
+[ext_resource path="res://decals/icon_outlined.svg" type="Texture2D" id=14]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -265,35 +266,55 @@ normal_texture = SubResource( 23 )
 material = SubResource( 24 )
 size = Vector3( 16, 1.25, 12 )
 
-[sub_resource type="CapsuleMesh" id=26]
+[sub_resource type="Gradient" id=26]
+offsets = PackedFloat32Array( 0, 0.852459, 1 )
+colors = PackedColorArray( 0, 0, 0, 1, 1, 4, 0.5, 1, 0, 0, 0, 1 )
 
-[sub_resource type="OpenSimplexNoise" id=27]
+[sub_resource type="GradientTexture" id=27]
+gradient = SubResource( 26 )
+width = 64
+
+[sub_resource type="CapsuleMesh" id=28]
+
+[sub_resource type="OpenSimplexNoise" id=29]
 octaves = 9
 
-[sub_resource type="NoiseTexture" id=28]
+[sub_resource type="NoiseTexture" id=30]
 seamless = true
-noise = SubResource( 27 )
+noise = SubResource( 29 )
 
-[sub_resource type="StandardMaterial3D" id=29]
-albedo_texture = SubResource( 28 )
+[sub_resource type="StandardMaterial3D" id=31]
+albedo_texture = SubResource( 30 )
 
-[sub_resource type="Curve" id=30]
+[sub_resource type="Curve" id=32]
 _data = [ Vector2( 0.0977012, 0.854545 ), 0.0, 0.0, 0, 0, Vector2( 0.189655, 0.363636 ), 0.0, 0.0, 0, 0, Vector2( 0.454023, 0.9 ), 0.0, 0.0, 0, 0, Vector2( 0.557471, 0.272727 ), 0.0, 0.0, 0, 0, Vector2( 0.724138, 0.727273 ), 0.0, 0.0, 0, 0, Vector2( 0.850575, 0.563636 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="TubeTrailMesh" id=31]
+[sub_resource type="TubeTrailMesh" id=33]
 radial_steps = 64
 sections = 16
 section_length = 0.081
-curve = SubResource( 30 )
+curve = SubResource( 32 )
 
-[sub_resource type="Curve" id=32]
+[sub_resource type="Curve" id=34]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.525 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="TubeTrailMesh" id=33]
+[sub_resource type="TubeTrailMesh" id=35]
 radial_steps = 32
 sections = 32
 section_length = 0.05
-curve = SubResource( 32 )
+curve = SubResource( 34 )
+
+[sub_resource type="OpenSimplexNoise" id=36]
+octaves = 7
+
+[sub_resource type="NoiseTexture" id=37]
+width = 128
+height = 128
+seamless = true
+as_normal_map = true
+noise = SubResource( 36 )
+
+[sub_resource type="BoxMesh" id=38]
 
 [node name="Test" type="Node3D"]
 script = null
@@ -620,9 +641,28 @@ script = null
 
 [node name="PoolWater" type="MeshInstance3D" parent="."]
 transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.4, -24 )
+layers = 524288
 gi_mode = 1
 mesh = SubResource( 25 )
 surface_material_override/0 = null
+script = null
+
+[node name="PoolLaser" type="Decal" parent="."]
+transform = Transform3D( -0.95777, -0.261221, 0.120168, 0.182576, -0.229638, 0.955999, -0.222132, 0.937566, 0.267633, -11.1226, 0.47306, -23.3261 )
+extents = Vector3( 5.758, 0.1, 8.169 )
+texture_emission = SubResource( 27 )
+emission_energy = 3.0
+upper_fade = 2.0
+lower_fade = 2.0
+cull_mask = 524287
+script = null
+
+[node name="PoolAreaFog" type="Decal" parent="."]
+transform = Transform3D( 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -4.29437, 0.8957, -24.1948 )
+extents = Vector3( 2.442, 5.346, 7.723 )
+texture_emission = ExtResource( 6 )
+upper_fade = 0.0
+lower_fade = 2.0
 script = null
 
 [node name="FakeLightCyan" type="Decal" parent="."]
@@ -642,16 +682,8 @@ script = null
 
 [node name="Capsule" type="MeshInstance3D" parent="."]
 transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017 )
-mesh = SubResource( 26 )
-surface_material_override/0 = SubResource( 29 )
-script = null
-
-[node name="AreaFog" type="Decal" parent="."]
-transform = Transform3D( 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -4.29437, 0.8957, -24.1948 )
-extents = Vector3( 2.442, 5.346, 7.723 )
-texture_emission = ExtResource( 6 )
-upper_fade = 0.0
-lower_fade = 2.0
+mesh = SubResource( 28 )
+surface_material_override/0 = SubResource( 31 )
 script = null
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
@@ -671,14 +703,14 @@ script = null
 
 [node name="Coil" type="MeshInstance3D" parent="."]
 transform = Transform3D( -0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917 )
-mesh = SubResource( 31 )
+mesh = SubResource( 33 )
 surface_material_override/0 = null
 script = null
 
 [node name="Car" type="MeshInstance3D" parent="."]
 transform = Transform3D( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6 )
 layers = 2
-mesh = SubResource( 33 )
+mesh = SubResource( 35 )
 surface_material_override/0 = null
 script = null
 
@@ -689,4 +721,83 @@ texture_albedo = ExtResource( 13 )
 upper_fade = 1.0
 lower_fade = 1.0
 cull_mask = 1048573
+script = null
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -43 )
+size = Vector3( 16, 6, 16 )
+script = null
+
+[node name="AreaFogNoiseColor" type="Decal" parent="CSGBox3D"]
+transform = Transform3D( -1, 1.42109e-14, 3.82137e-15, 1.42109e-14, 1, -8.74228e-08, -3.82137e-15, -8.74228e-08, -1, 0, -0.7, 0 )
+extents = Vector3( 7.99, 4, 7.99 )
+texture_emission = SubResource( 37 )
+emission_energy = 5.0
+upper_fade = 2.0
+lower_fade = 0.0
+script = null
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D"]
+transform = Transform3D( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.2, 0 )
+operation = 2
+radius = 7.5
+height = 6.0
+sides = 64
+cone = true
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBox3D"]
+transform = Transform3D( 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 2.6, 0 )
+mesh = SubResource( 38 )
+surface_material_override/0 = null
+script = null
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CSGBox3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 2.3 )
+mesh = SubResource( 38 )
+surface_material_override/0 = null
+script = null
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="CSGBox3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -4 )
+mesh = SubResource( 38 )
+surface_material_override/0 = null
+script = null
+
+[node name="LogoAlbedo" type="Decal" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.155, 0, 21 )
+extents = Vector3( 4, 4, 4 )
+texture_albedo = ExtResource( 14 )
+script = null
+
+[node name="LogoAlbedoOrm" type="Decal" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.155, 0, 21 )
+extents = Vector3( 4, 4, 4 )
+texture_albedo = ExtResource( 14 )
+texture_orm = ExtResource( 14 )
+script = null
+
+[node name="LogoOrmOnly" type="Decal" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15497, 0, 21 )
+extents = Vector3( 4, 4, 4 )
+texture_albedo = ExtResource( 14 )
+texture_orm = ExtResource( 14 )
+albedo_mix = 0.0
+script = null
+
+[node name="LogoEmission" type="Decal" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84503, 0, 21 )
+extents = Vector3( 4, 4, 4 )
+texture_albedo = ExtResource( 14 )
+texture_emission = ExtResource( 14 )
+albedo_mix = 0.0
+script = null
+
+[node name="LogoEmissionOrm" type="Decal" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.845, 0, 21 )
+extents = Vector3( 4, 4, 4 )
+texture_albedo = ExtResource( 14 )
+texture_orm = ExtResource( 14 )
+texture_emission = ExtResource( 14 )
+albedo_mix = 0.0
 script = null

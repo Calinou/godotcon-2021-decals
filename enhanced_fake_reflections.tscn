@@ -1,7 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://enhanced_fake_reflections.gd" type="Script" id=1]
 [ext_resource path="res://decals/box_shadow.png" type="Texture2D" id=2]
+[ext_resource path="res://decals/white_square.png" type="Texture2D" id=3]
+[ext_resource path="res://decals/white_circle_soft.png" type="Texture2D" id=4]
+
+[sub_resource type="StandardMaterial3D" id=7]
+albedo_color = Color( 0.290196, 0.772549, 1, 1 )
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -16,7 +21,7 @@ size = Vector2( 15, 15 )
 
 [sub_resource type="StandardMaterial3D" id=5]
 transparency = 1
-albedo_color = Color( 0.501961, 0.501961, 0.501961, 0.25098 )
+albedo_color = Color( 0.290196, 0.772549, 1, 0.25098 )
 
 [sub_resource type="WorldMarginShape3D" id=6]
 
@@ -30,16 +35,18 @@ script = null
 transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 use_collision = true
 size = Vector3( 16, 8, 16 )
+material = SubResource( 7 )
 script = null
 
 [node name="CSGBox3DSubtract" type="CSGBox3D" parent="Top/CSGBox3D"]
 transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 operation = 2
 size = Vector3( 15, 8, 15 )
+material = SubResource( 7 )
 script = null
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Top"]
-transform = Transform3D( 0.5, -0.866025, 0, 0.692375, 0.399743, -0.600685, 0.520209, 0.300343, 0.799485, 2, 4, 4 )
+transform = Transform3D( 0.5, -0.170584, 0.849059, 0.692375, -0.510179, -0.51023, 0.520209, 0.842982, -0.136982, 1.30188, 6.40521, 5.31438 )
 physics_material_override = SubResource( 1 )
 linear_velocity = Vector3( 5, 0, 2 )
 script = null
@@ -53,8 +60,8 @@ script = null
 [node name="Decal" type="Decal" parent="Top/RigidBody3D/MeshInstance3D"]
 transform = Transform3D( -1, -1.49012e-07, -1.49012e-08, 0, -5.96046e-08, -1, 1.78814e-07, -1, 4.47035e-08, 0, 1.19209e-07, 1 )
 extents = Vector3( 1.1, 1, 1.1 )
-texture_albedo = ExtResource( 2 )
-modulate = Color( 1, 5, 1, 1 )
+texture_albedo = ExtResource( 4 )
+modulate = Color( 0, 0, 0, 1 )
 normal_fade = 0.5
 upper_fade = 1.0
 lower_fade = 1.0
@@ -64,53 +71,54 @@ script = null
 transform = Transform3D( 1, 2.38419e-07, -1.49012e-08, 0, -2.98023e-08, -1, -2.98023e-07, 1, -2.98023e-08, 9.53674e-07, -1.19209e-07, -1 )
 extents = Vector3( 1.1, 1, 1.1 )
 texture_albedo = ExtResource( 2 )
-modulate = Color( 1, 5, 1, 1 )
+modulate = Color( 0, 0, 0, 1 )
 normal_fade = 0.5
 upper_fade = 1.0
 lower_fade = 1.0
 script = null
 
 [node name="Decal3" type="Decal" parent="Top/RigidBody3D/MeshInstance3D"]
-transform = Transform3D( -1, -1.49012e-07, -1.49012e-08, 0, -5.96046e-08, -1, 1.78814e-07, -1, 4.47035e-08, -0.999998, 3.57628e-07, -2.38419e-07 )
+transform = Transform3D( 1, -1.56462e-07, -2.98023e-08, -5.96046e-08, -4.47035e-08, 1, -1.56462e-07, -1, -4.47035e-08, -0.999998, 0, -1.19209e-07 )
 extents = Vector3( 1.1, 1, 1.1 )
 texture_albedo = ExtResource( 2 )
-modulate = Color( 1, 5, 1, 1 )
+modulate = Color( 0, 0, 0, 1 )
 normal_fade = 0.5
 upper_fade = 1.0
 lower_fade = 1.0
 script = null
 
 [node name="Decal4" type="Decal" parent="Top/RigidBody3D/MeshInstance3D"]
-transform = Transform3D( 1, 8.9407e-08, -1.49012e-08, 1.49012e-08, -4.47035e-08, -1, -8.9407e-08, 1, -2.98023e-08, 1, 1.19209e-07, -7.15256e-07 )
+transform = Transform3D( -1, 1.11759e-07, 0, 2.98023e-08, -3.72529e-08, 1, 9.68575e-08, 1, 1.49012e-08, 1, -2.38419e-07, -2.38419e-07 )
 extents = Vector3( 1.1, 1, 1.1 )
 texture_albedo = ExtResource( 2 )
-modulate = Color( 1, 5, 1, 1 )
+modulate = Color( 0, 0, 0, 1 )
 normal_fade = 0.5
 upper_fade = 1.0
 lower_fade = 1.0
 script = null
 
 [node name="Decal5" type="Decal" parent="Top/RigidBody3D/MeshInstance3D"]
-transform = Transform3D( -2.98023e-08, -8.9407e-08, 1, 1, -5.96046e-08, 2.08616e-07, 2.98023e-08, 1, -1.19209e-07, 1.90735e-06, 1, -2.38419e-07 )
+transform = Transform3D( 8.9407e-08, -4.47035e-08, -1, -1, -4.47035e-08, -8.9407e-08, 7.45058e-09, 1, -3.72529e-08, 1.43051e-06, 1, 0 )
 extents = Vector3( 1.1, 1, 1.1 )
 texture_albedo = ExtResource( 2 )
-modulate = Color( 1, 5, 1, 1 )
+modulate = Color( 0, 0, 0, 1 )
 normal_fade = 0.5
 upper_fade = 1.0
 lower_fade = 1.0
 script = null
 
 [node name="Decal6" type="Decal" parent="Top/RigidBody3D/MeshInstance3D"]
-transform = Transform3D( 1.04308e-07, -8.9407e-08, -1, -1, -5.96046e-08, -1.63913e-07, -4.47035e-08, 1, -2.98023e-08, 2.38419e-06, -0.999999, -4.76837e-07 )
+transform = Transform3D( -1.78814e-07, -1.3411e-07, 1, 1, -1.49012e-08, 2.08616e-07, 1.49012e-08, 1, 1.71363e-07, 2.38419e-06, -0.999999, 0 )
 extents = Vector3( 1.1, 1, 1.1 )
 texture_albedo = ExtResource( 2 )
-modulate = Color( 1, 5, 1, 1 )
+modulate = Color( 0, 0, 0, 1 )
 normal_fade = 0.5
 upper_fade = 1.0
 lower_fade = 1.0
 script = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Top/RigidBody3D"]
+transform = Transform3D( 1, 2.98023e-08, -2.98023e-08, -1.49012e-08, 1, 1.49012e-08, 0, -1.49012e-08, 1, -4.76837e-07, -4.76837e-07, 2.6 )
 shape = SubResource( 3 )
 script = null
 
@@ -122,7 +130,7 @@ transform = Transform3D( 1, 0, 0, 0, -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, -4
 script = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bottom/Mirror"]
-transform = Transform3D( 1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform3D( 1, 0, -8.74228e-08, 0, -1, 0, 8.74228e-08, 0, 1, 0, 0, 0 )
 mesh = SubResource( 2 )
 surface_material_override/0 = null
 script = null
@@ -130,12 +138,14 @@ script = null
 [node name="CSGBox3D" type="CSGBox3D" parent="Bottom"]
 transform = Transform3D( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -4, 0 )
 size = Vector3( 16, 8, 16 )
+material = SubResource( 7 )
 script = null
 
 [node name="CSGBox3DSubtract" type="CSGBox3D" parent="Bottom/CSGBox3D"]
 transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 operation = 2
 size = Vector3( 15, 8, 15 )
+material = SubResource( 7 )
 script = null
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -150,7 +160,7 @@ script = null
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D( 0.69724, 0, 0.716838, 0, 1, 0, -0.716838, 0, 0.69724, 0, -5.5, 0 )
-light_energy = 4.0
+light_energy = 3.5
 omni_range = 25.0
 script = null
 
@@ -164,4 +174,13 @@ script = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource( 6 )
+script = null
+
+[node name="Darkening" type="Decal" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8, 0 )
+extents = Vector3( 7.9, 3.8, 7.9 )
+texture_albedo = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+upper_fade = 0.5
+lower_fade = 6.27667e-05
 script = null

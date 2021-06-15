@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture2D"
-path="res://.godot/imported/car_shadow.png-966ff8f6abf32712bfca64847d5a6c8d.stex"
+path="res://.godot/imported/icon_outlined.svg-fbba74f4274dee85afe3fca36ecc9f83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://decals/car_shadow.png"
-dest_files=[ "res://.godot/imported/car_shadow.png-966ff8f6abf32712bfca64847d5a6c8d.stex" ]
+source_file="res://decals/icon_outlined.svg"
+dest_files=[ "res://.godot/imported/icon_outlined.svg-fbba74f4274dee85afe3fca36ecc9f83.stex" ]
 
 [params]
 
