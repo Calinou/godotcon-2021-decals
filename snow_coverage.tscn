@@ -1,194 +1,179 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=3 uid="uid://2rt6bskvi1yj"]
 
-[ext_resource path="res://terrain.glb" type="PackedScene" id=1]
-[ext_resource path="res://decals/snow_coverage_thick.png" type="Texture2D" id=2]
-[ext_resource path="res://decals/snow_coverage_thin.png" type="Texture2D" id=3]
-[ext_resource path="res://particles/snow.png" type="Texture2D" id=4]
+[ext_resource type="PackedScene" uid="uid://17shdb0xmudu" path="res://terrain.glb" id="1"]
+[ext_resource type="Texture2D" uid="uid://bap0fa7768iqi" path="res://decals/snow_coverage_thick.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://r8yde1r0w1cy" path="res://decals/snow_coverage_thin.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c0aof8rawssx6" path="res://particles/snow.png" id="4"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("SnowCoverageThin:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ) ]
+"values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "move_clouds"
 length = 30.0
-loop = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("SnowCoverageThin:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 30 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+"values": [Vector3(0, 0, 0), Vector3(0, 360, 0)]
 }
 
-[sub_resource type="OpenSimplexNoise" id=3]
-octaves = 9
-period = 256.0
-lacunarity = 3.0
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0uxq"]
+_data = {
+"RESET": SubResource("1"),
+"move_clouds": SubResource("2")
+}
 
-[sub_resource type="NoiseTexture" id=4]
+[sub_resource type="FastNoiseLite" id="3"]
+
+[sub_resource type="NoiseTexture2D" id="4"]
 seamless = true
-noise = SubResource( 3 )
+noise = SubResource("3")
 
-[sub_resource type="StandardMaterial3D" id=5]
-albedo_texture = SubResource( 4 )
-uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+[sub_resource type="StandardMaterial3D" id="5"]
+albedo_texture = SubResource("4")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 2.0
 texture_filter = 5
 
-[sub_resource type="PlaneMesh" id=6]
-size = Vector2( 500, 1000 )
+[sub_resource type="PlaneMesh" id="6"]
+size = Vector2(500, 1000)
 
-[sub_resource type="PlaneMesh" id=7]
-size = Vector2( 200, 400 )
+[sub_resource type="PlaneMesh" id="7"]
+size = Vector2(200, 400)
 
-[sub_resource type="PhysicalSkyMaterial" id=8]
+[sub_resource type="PhysicalSkyMaterial" id="8"]
 
-[sub_resource type="Sky" id=9]
-sky_material = SubResource( 8 )
+[sub_resource type="Sky" id="9"]
+sky_material = SubResource("8")
 
-[sub_resource type="Environment" id=10]
+[sub_resource type="Environment" id="10"]
 background_mode = 2
-sky = SubResource( 9 )
+sky = SubResource("9")
+tonemap_mode = 3
+tonemap_white = 6.0
 fog_enabled = true
-fog_light_color = Color( 0.5525, 0.596375, 0.65, 1 )
-fog_density = 0.01
+fog_light_color = Color(0.5525, 0.596375, 0.65, 1)
 
-[sub_resource type="Curve" id=11]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.0921053, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="11"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0921053, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
-[sub_resource type="CurveTexture" id=12]
-curve = SubResource( 11 )
+[sub_resource type="CurveTexture" id="12"]
+curve = SubResource("11")
 
-[sub_resource type="ParticlesMaterial" id=13]
+[sub_resource type="ParticleProcessMaterial" id="13"]
 emission_shape = 2
-emission_box_extents = Vector3( 100, 1, 100 )
-damping = 1.0
-scale_curve = SubResource( 12 )
-collision_friction = 0.25
+emission_sphere_radius = 1.0
+scale_curve = SubResource("12")
 collision_use_scale = true
 
-[sub_resource type="StandardMaterial3D" id=14]
+[sub_resource type="StandardMaterial3D" id="14"]
 transparency = 1
-albedo_texture = ExtResource( 4 )
+albedo_texture = ExtResource("4")
 billboard_mode = 3
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="QuadMesh" id=15]
-material = SubResource( 14 )
-size = Vector2( 0.25, 0.25 )
+[sub_resource type="PlaneMesh" id="15"]
+material = SubResource("14")
+size = Vector2(0.25, 0.25)
 
 [node name="SnowCoverage" type="Node3D"]
-script = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move_clouds"
-anims/RESET = SubResource( 1 )
-anims/move_clouds = SubResource( 2 )
-blend_times = [  ]
-script = null
+libraries = {
+"": SubResource("AnimationLibrary_k0uxq")
+}
 
-[node name="terrain" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0 )
+[node name="terrain" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
 [node name="Plane" parent="terrain" index="0"]
-surface_material_override/0 = SubResource( 5 )
+surface_material_override/0 = SubResource("5")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform( 0.705313, 0.04078, -0.707723, 0, 0.998344, 0.0575261, 0.708897, -0.0405739, 0.704145, -95.8807, 5.14658, 100.751 )
-script = null
+transform = Transform3D(0.705313, 0.04078, -0.707723, 0, 0.998344, 0.0575261, 0.708897, -0.0405739, 0.704145, -95.8807, 5.14658, 100.751)
 
 [node name="Plane1" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -349, -4, 0 )
-mesh = SubResource( 6 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -349, -4, 0)
+mesh = SubResource("6")
 
 [node name="Plane2" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 350, -4, 0 )
-mesh = SubResource( 6 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350, -4, 0)
+mesh = SubResource("6")
 
 [node name="Plane3" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 300 )
-mesh = SubResource( 7 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 300)
+mesh = SubResource("7")
 
 [node name="Plane4" type="MeshInstance3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, -299 )
-mesh = SubResource( 7 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, -299)
+mesh = SubResource("7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 10 )
-script = null
+environment = SubResource("10")
 
 [node name="SnowCoverageThin" type="Decal" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.9538, 0 )
-extents = Vector3( 100, 10, 100 )
-texture_albedo = ExtResource( 3 )
-modulate = Color( 1.5, 1.5, 1.5, 1 )
-normal_fade = 0.94
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.9538, 0)
+extents = Vector3(100, 10, 100)
+texture_albedo = ExtResource("3")
+modulate = Color(1.5, 1.5, 1.5, 1)
+normal_fade = 0.7
 upper_fade = 0.0
 lower_fade = 0.5
 distance_fade_begin = 50.0
 distance_fade_length = 50.0
-script = null
 
 [node name="SnowCoverageThick" type="Decal" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.9538, 0 )
-extents = Vector3( 100, 10, 100 )
-texture_albedo = ExtResource( 2 )
-modulate = Color( 1.5, 1.5, 1.5, 1 )
-normal_fade = 0.94
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.9538, 0)
+extents = Vector3(100, 10, 100)
+texture_albedo = ExtResource("2")
+modulate = Color(1.5, 1.5, 1.5, 1)
+normal_fade = 0.8
 upper_fade = 0.0
 lower_fade = 0.5
 distance_fade_begin = 50.0
 distance_fade_length = 50.0
-script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform( 0.963876, -0.187342, 0.189329, 0, 0.710826, 0.703368, -0.26635, -0.67796, 0.685148, -54.7783, 8.73534, 42.7632 )
+transform = Transform3D(0.963876, -0.187342, 0.189329, 0, 0.710826, 0.703368, -0.26635, -0.67796, 0.685148, -54.7783, 8.73534, 42.7632)
 shadow_enabled = true
-shadow_bias = 0.005
+shadow_normal_bias = 2.0
 shadow_blur = 2.0
 directional_shadow_max_distance = 150.0
-script = null
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 89, 0 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 89, 0)
 amount = 10000
 lifetime = 10.0
 collision_base_size = 0.1
-visibility_aabb = AABB( -100, -80, -100, 200, 80, 200 )
-process_material = SubResource( 13 )
-draw_pass_1 = SubResource( 15 )
-script = null
+visibility_aabb = AABB(-100, -80, -100, 200, 80, 200)
+process_material = SubResource("13")
+draw_pass_1 = SubResource("15")
 
-[node name="GPUParticlesCollisionHeightField" type="GPUParticlesCollisionHeightField" parent="."]
-extents = Vector3( 100, 40, 100 )
-script = null
+[node name="GPUParticlesCollisionHeightField" type="GPUParticlesCollisionHeightField3D" parent="."]
+extents = Vector3(100, 40, 100)
 
 [editable path="terrain"]

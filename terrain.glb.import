@@ -3,17 +3,19 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+uid="uid://17shdb0xmudu"
 path="res://.godot/imported/terrain.glb-b2160bb0ba4a5beeb4fac37d95b0a850.scn"
 
 [deps]
 
 source_file="res://terrain.glb"
-dest_files=[ "res://.godot/imported/terrain.glb-b2160bb0ba4a5beeb4fac37d95b0a850.scn" ]
+dest_files=["res://.godot/imported/terrain.glb-b2160bb0ba4a5beeb4fac37d95b0a850.scn"]
 
 [params]
 
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -24,5 +26,4 @@ skins/use_named_skins=true
 animation/import=true
 animation/fps=15
 import_script/path=""
-_subresources={
-}
+_subresources={}

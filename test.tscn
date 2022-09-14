@@ -1,595 +1,546 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=3 uid="uid://blviltpr4vwg2"]
 
-[ext_resource path="res://decals/splat01.png" type="Texture2D" id=1]
-[ext_resource path="res://decals/caustics/caust00.png" type="Texture2D" id=2]
-[ext_resource path="res://caustics.gd" type="Script" id=3]
-[ext_resource path="res://fps_label.gd" type="Script" id=4]
-[ext_resource path="res://decals/white_circle_soft.png" type="Texture2D" id=5]
-[ext_resource path="res://decals/white_square.png" type="Texture2D" id=6]
-[ext_resource path="res://decals/nobiax/2_normal.png" type="Texture2D" id=7]
-[ext_resource path="res://decals/nobiax/2.png" type="Texture2D" id=8]
-[ext_resource path="res://decals/nobiax/1_normal.png" type="Texture2D" id=9]
-[ext_resource path="res://decals/nobiax/1.png" type="Texture2D" id=10]
-[ext_resource path="res://decals/splat01_wet_orm.png" type="Texture2D" id=11]
-[ext_resource path="res://addons/kenney_prototype_textures/dark/texture_03.png" type="Texture2D" id=12]
-[ext_resource path="res://decals/car_shadow.png" type="Texture2D" id=13]
-[ext_resource path="res://decals/icon_outlined.svg" type="Texture2D" id=14]
+[ext_resource type="Texture2D" uid="uid://kpgocd72n4wl" path="res://decals/splat01.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dxtypixrsxw35" path="res://decals/caustics/caust00.png" id="2"]
+[ext_resource type="Script" path="res://caustics.gd" id="3"]
+[ext_resource type="Script" path="res://fps_label.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://ce4j23t4lv2le" path="res://decals/white_circle_soft.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://vu1xljxl3sus" path="res://decals/white_square.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://s66edqnc7mlh" path="res://decals/nobiax/2_normal.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://b1nvtsdewg3ld" path="res://decals/nobiax/2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dfxrprociqnd5" path="res://decals/nobiax/1_normal.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://c1be1w6hj3ibr" path="res://decals/nobiax/1.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bt2isf4knb3rp" path="res://decals/splat01_wet_orm.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cd3hi6vwqvkbn" path="res://addons/kenney_prototype_textures/dark/texture_03.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://cfpb0heo1s8sb" path="res://decals/car_shadow.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://ddh66mvvreao2" path="res://decals/icon_outlined.svg" id="14"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Coil:transform")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Transform3D( -0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917 ) ]
+"values": [Transform3D(-0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Camera3D:transform")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Transform3D( 0.8982, -0.0284015, 0.438668, 0, 0.997911, 0.0646095, -0.439587, -0.0580323, 0.896323, 2.68574, -0.46104, 2.42271 ) ]
+"values": [Transform3D(0.8982, -0.0284015, 0.438668, 0, 0.997911, 0.0646095, -0.439587, -0.0580323, 0.896323, 2.68574, -0.46104, 2.42271)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Capsule:transform")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017 ) ]
+"values": [Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017)]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("DirectionalLight3D:shadow_enabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
+tracks/3/path = NodePath("Car:transform")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Car:transform")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
-"update": 0,
-"values": [ Transform3D( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6 ) ]
+"values": [Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6)]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "move_blob_object"
 length = 12.0
-loop = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Camera3D:transform")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Transform3D( -0.698967, -0.100202, 0.708099, 0, 0.990136, 0.140112, -0.715153, 0.0979338, -0.692072, -6.7076, 0.0955604, -7.78628 ) ]
+"values": [Transform3D(-0.698967, -0.100202, 0.708099, 0, 0.990136, 0.140112, -0.715153, 0.0979338, -0.692072, -6.7076, 0.0955604, -7.78628)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("DirectionalLight3D:shadow_enabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ false ]
+"values": [false]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Car:transform")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 3, 6, 9 ),
-"transitions": PackedFloat32Array( -2, -2, -2, -2 ),
+"times": PackedFloat32Array(0, 3, 6, 9),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
 "update": 0,
-"values": [ Transform3D( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6 ), Transform3D( -2.29438e-08, 0.524892, -0.851169, -1, -4.37114e-08, 0, -3.72058e-08, 0.851169, 0.524892, -7.72268, -0.488295, -6.07885 ), Transform3D( 4.84313e-08, -0.963853, -0.266436, -1, 0, 0, 3.47437e-08, 0.266436, -0.963853, -9.68269, -0.488295, -3.86435 ), Transform3D( 0, -0.134439, 0.990922, -1, 0, 0, 0, -0.990922, -0.134439, -9.84135, 0.387868, -4.93218 ) ]
+"values": [Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6), Transform3D(-2.29438e-08, 0.524892, -0.851169, -1, -4.37114e-08, 0, -3.72058e-08, 0.851169, 0.524892, -7.72268, -0.488295, -6.07885), Transform3D(4.84313e-08, -0.963853, -0.266436, -1, 0, 0, 3.47437e-08, 0.266436, -0.963853, -9.68269, -0.488295, -3.86435), Transform3D(0, -0.134439, 0.990922, -1, 0, 0, 0, -0.990922, -0.134439, -9.84135, 0.387868, -4.93218)]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 length = 6.0
-loop = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Camera3D:transform")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 3 ),
-"transitions": PackedFloat32Array( -2, -2 ),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
-"values": [ Transform3D( 0.8982, -0.027253, 0.438741, 0, 0.998076, 0.0619968, -0.439587, -0.0556855, 0.896472, 3.39127, -0.456424, 2.16016 ), Transform3D( 0.8982, -0.0284015, 0.438668, 0, 0.997911, 0.0646095, -0.439587, -0.0580323, 0.896323, 1.7144, -0.46104, 2.89809 ) ]
+"values": [Transform3D(0.8982, -0.027253, 0.438741, 0, 0.998076, 0.0619968, -0.439587, -0.0556855, 0.896472, 3.39127, -0.456424, 2.16016), Transform3D(0.8982, -0.0284015, 0.438668, 0, 0.997911, 0.0646095, -0.439587, -0.0580323, 0.896323, 1.7144, -0.46104, 2.89809)]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 length = 12.0
-loop = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Camera3D:transform")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Transform3D( 0.95546, 0.0527905, -0.29036, 0, 0.983872, 0.178878, 0.29512, -0.170911, 0.940049, -11.4712, 0.646901, -12.7406 ) ]
+"values": [Transform3D(0.95546, 0.0527905, -0.29036, 0, 0.983872, 0.178878, 0.29512, -0.170911, 0.940049, -11.4712, 0.646901, -12.7406)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Capsule:transform")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 6 ),
-"transitions": PackedFloat32Array( -2, -2 ),
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
-"values": [ Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017 ), Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25853, 0.0498247, -16.4017 ) ]
+"values": [Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25853, 0.0498247, -16.4017)]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id="5"]
 length = 10.0
-loop = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Coil:transform")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 5 ),
-"transitions": PackedFloat32Array( -2, -2 ),
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(-2, -2),
 "update": 0,
-"values": [ Transform3D( -0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917 ), Transform3D( -0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -0.926158, 1.5441, -23.1917 ) ]
+"values": [Transform3D(-0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917), Transform3D(-0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -0.926158, 1.5441, -23.1917)]
 }
 
-[sub_resource type="PhysicalSkyMaterial" id=6]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3blxi"]
+_data = {
+"RESET": SubResource("1"),
+"move_blob_object": SubResource("2"),
+"move_camera_wet": SubResource("3"),
+"move_capsule": SubResource("4"),
+"move_coil": SubResource("5")
+}
 
-[sub_resource type="Sky" id=7]
-sky_material = SubResource( 6 )
+[sub_resource type="PhysicalSkyMaterial" id="6"]
 
-[sub_resource type="Environment" id=8]
+[sub_resource type="Sky" id="7"]
+sky_material = SubResource("6")
+
+[sub_resource type="Environment" id="8"]
 background_mode = 2
-sky = SubResource( 7 )
+sky = SubResource("7")
 tonemap_mode = 3
 tonemap_white = 6.0
 ssao_enabled = true
 sdfgi_use_occlusion = true
-sdfgi_read_sky_light = true
 sdfgi_bounce_feedback = 1.0
-sdfgi_cascades = 0
-sdfgi_max_distance = 204.8
 sdfgi_y_scale = 2
 fog_enabled = true
-fog_light_color = Color( 0.501961, 0.6, 0.701961, 1 )
+fog_light_color = Color(0.501961, 0.6, 0.701961, 1)
 fog_aerial_perspective = 1.0
 
-[sub_resource type="StandardMaterial3D" id=9]
-albedo_texture = ExtResource( 12 )
-uv1_scale = Vector3( 2048, 2048, 2048 )
+[sub_resource type="StandardMaterial3D" id="9"]
+albedo_texture = ExtResource("12")
+uv1_scale = Vector3(2048, 2048, 2048)
 texture_filter = 5
 
-[sub_resource type="PlaneMesh" id=10]
-material = SubResource( 9 )
-size = Vector2( 4096, 4096 )
+[sub_resource type="PlaneMesh" id="10"]
+material = SubResource("9")
+size = Vector2(4096, 4096)
 subdivide_width = 4
 subdivide_depth = 4
 
-[sub_resource type="BoxMesh" id=11]
+[sub_resource type="BoxMesh" id="11"]
 
-[sub_resource type="StandardMaterial3D" id=12]
-albedo_color = Color( 0.09, 0.07779, 0.0567, 1 )
+[sub_resource type="StandardMaterial3D" id="12"]
+albedo_color = Color(0.09, 0.07779, 0.0567, 1)
 
-[sub_resource type="BoxMesh" id=13]
-size = Vector3( 1.99, 1.99, 1.99 )
+[sub_resource type="BoxMesh" id="13"]
+size = Vector3(1.99, 1.99, 1.99)
 
-[sub_resource type="OpenSimplexNoise" id=14]
+[sub_resource type="FastNoiseLite" id="14"]
 
-[sub_resource type="NoiseTexture" id=15]
+[sub_resource type="NoiseTexture2D" id="15"]
 seamless = true
 as_normal_map = true
-bump_strength = 32.0
-noise = SubResource( 14 )
+bump_strength = 10.0
+noise = SubResource("14")
 
-[sub_resource type="StandardMaterial3D" id=16]
-albedo_color = Color( 0.768627, 0.403922, 1, 1 )
+[sub_resource type="StandardMaterial3D" id="16"]
+albedo_color = Color(0.768627, 0.403922, 1, 1)
 normal_enabled = true
-normal_texture = SubResource( 15 )
-uv1_scale = Vector3( 3, 2, 1 )
+normal_texture = SubResource("15")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 5
 
-[sub_resource type="SphereMesh" id=17]
+[sub_resource type="SphereMesh" id="17"]
 
-[sub_resource type="StandardMaterial3D" id=18]
-albedo_color = Color( 1, 0.639216, 0.52549, 1 )
+[sub_resource type="StandardMaterial3D" id="18"]
+albedo_color = Color(1, 0.639216, 0.52549, 1)
 
-[sub_resource type="BoxMesh" id=19]
+[sub_resource type="BoxMesh" id="19"]
 
-[sub_resource type="BoxMesh" id=20]
-size = Vector3( 16, 5, 2 )
+[sub_resource type="BoxMesh" id="20"]
+size = Vector3(16, 5, 2)
 
-[sub_resource type="BoxMesh" id=21]
-size = Vector3( 12, 1, 12 )
+[sub_resource type="BoxMesh" id="21"]
+size = Vector3(12, 1, 12)
 
-[sub_resource type="OpenSimplexNoise" id=22]
+[sub_resource type="FastNoiseLite" id="22"]
 
-[sub_resource type="NoiseTexture" id=23]
+[sub_resource type="NoiseTexture2D" id="23"]
 seamless = true
 as_normal_map = true
-noise = SubResource( 22 )
+noise = SubResource("22")
 
-[sub_resource type="StandardMaterial3D" id=24]
+[sub_resource type="StandardMaterial3D" id="24"]
 transparency = 1
-albedo_color = Color( 1, 1, 1, 0.54902 )
+albedo_color = Color(1, 1, 1, 0.54902)
 metallic = 1.0
 metallic_specular = 1.0
 roughness = 0.0
 normal_enabled = true
-normal_texture = SubResource( 23 )
+normal_texture = SubResource("23")
 
-[sub_resource type="BoxMesh" id=25]
-material = SubResource( 24 )
-size = Vector3( 16, 1.25, 12 )
+[sub_resource type="BoxMesh" id="25"]
+material = SubResource("24")
+size = Vector3(16, 1.25, 12)
 
-[sub_resource type="Gradient" id=26]
-offsets = PackedFloat32Array( 0, 0.852459, 1 )
-colors = PackedColorArray( 0, 0, 0, 1, 1, 4, 0.5, 1, 0, 0, 0, 1 )
+[sub_resource type="Gradient" id="26"]
+offsets = PackedFloat32Array(0, 0.852459, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 4, 0.5, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture" id=27]
-gradient = SubResource( 26 )
+[sub_resource type="GradientTexture1D" id="27"]
+gradient = SubResource("26")
 width = 64
 
-[sub_resource type="CapsuleMesh" id=28]
+[sub_resource type="CapsuleMesh" id="28"]
 
-[sub_resource type="OpenSimplexNoise" id=29]
-octaves = 9
+[sub_resource type="FastNoiseLite" id="29"]
 
-[sub_resource type="NoiseTexture" id=30]
+[sub_resource type="NoiseTexture2D" id="30"]
 seamless = true
-noise = SubResource( 29 )
+noise = SubResource("29")
 
-[sub_resource type="StandardMaterial3D" id=31]
-albedo_texture = SubResource( 30 )
+[sub_resource type="StandardMaterial3D" id="31"]
+albedo_texture = SubResource("30")
 
-[sub_resource type="Curve" id=32]
-_data = [ Vector2( 0.0977012, 0.854545 ), 0.0, 0.0, 0, 0, Vector2( 0.189655, 0.363636 ), 0.0, 0.0, 0, 0, Vector2( 0.454023, 0.9 ), 0.0, 0.0, 0, 0, Vector2( 0.557471, 0.272727 ), 0.0, 0.0, 0, 0, Vector2( 0.724138, 0.727273 ), 0.0, 0.0, 0, 0, Vector2( 0.850575, 0.563636 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="32"]
+_data = [Vector2(0.0977012, 0.854545), 0.0, 0.0, 0, 0, Vector2(0.189655, 0.363636), 0.0, 0.0, 0, 0, Vector2(0.454023, 0.9), 0.0, 0.0, 0, 0, Vector2(0.557471, 0.272727), 0.0, 0.0, 0, 0, Vector2(0.724138, 0.727273), 0.0, 0.0, 0, 0, Vector2(0.850575, 0.563636), 0.0, 0.0, 0, 0]
+point_count = 6
 
-[sub_resource type="TubeTrailMesh" id=33]
+[sub_resource type="TubeTrailMesh" id="33"]
 radial_steps = 64
 sections = 16
 section_length = 0.081
-curve = SubResource( 32 )
+curve = SubResource("32")
 
-[sub_resource type="Curve" id=34]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.525 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="34"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.5, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 0.525), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
 
-[sub_resource type="TubeTrailMesh" id=35]
+[sub_resource type="TubeTrailMesh" id="35"]
 radial_steps = 32
 sections = 32
 section_length = 0.05
-curve = SubResource( 34 )
+curve = SubResource("34")
 
-[sub_resource type="OpenSimplexNoise" id=36]
-octaves = 7
+[sub_resource type="FastNoiseLite" id="36"]
 
-[sub_resource type="NoiseTexture" id=37]
+[sub_resource type="NoiseTexture2D" id="37"]
 width = 128
 height = 128
 seamless = true
 as_normal_map = true
-noise = SubResource( 36 )
+noise = SubResource("36")
 
-[sub_resource type="BoxMesh" id=38]
+[sub_resource type="BoxMesh" id="38"]
 
 [node name="Test" type="Node3D"]
-script = null
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D( 0.8982, -0.0284015, 0.438668, 0, 0.997911, 0.0646095, -0.439587, -0.0580323, 0.896323, 2.68574, -0.46104, 2.42271 )
-script = null
+transform = Transform3D(0.8982, -0.0284015, 0.438668, 0, 0.997911, 0.0646095, -0.439587, -0.0580323, 0.896323, 2.68574, -0.46104, 2.42271)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "move_blob_object"
-anims/RESET = SubResource( 1 )
-anims/move_blob_object = SubResource( 2 )
-anims/move_camera_wet = SubResource( 3 )
-anims/move_capsule = SubResource( 4 )
-anims/move_coil = SubResource( 5 )
-blend_times = [  ]
-script = null
+libraries = {
+"": SubResource("AnimationLibrary_3blxi")
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 8 )
-script = null
+environment = SubResource("8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.773862, 0.439551, -0.455997, 0, 0.719971, 0.694004, 0.633355, 0.537063, -0.557158, -2.1275, 3.23794, -2.59948)
+shadow_enabled = true
+shadow_normal_bias = 2.0
+shadow_blur = 2.0
 
 [node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-gi_mode = 1
-mesh = SubResource( 10 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("10")
 
 [node name="Box" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
-gi_mode = 1
-mesh = SubResource( 11 )
-surface_material_override/0 = SubResource( 12 )
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("11")
+surface_material_override/0 = SubResource("12")
 
 [node name="BoxTilted" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, -0.922125, 3 )
-gi_mode = 1
-mesh = SubResource( 13 )
-surface_material_override/0 = SubResource( 16 )
-script = null
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, -0.922125, 3)
+mesh = SubResource("13")
+surface_material_override/0 = SubResource("16")
 
 [node name="Sphere" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 layers = 2
-gi_mode = 1
-mesh = SubResource( 17 )
-surface_material_override/0 = SubResource( 18 )
-script = null
+mesh = SubResource("17")
+surface_material_override/0 = SubResource("18")
 
 [node name="Sphere2" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
 layers = 2
-gi_mode = 1
-mesh = SubResource( 19 )
-surface_material_override/0 = SubResource( 18 )
-script = null
+mesh = SubResource("19")
+surface_material_override/0 = SubResource("18")
 
 [node name="Paint" type="Decal" parent="."]
-transform = Transform3D( 0.00479122, -0.980785, -0.195032, -0.998236, 0.00684877, -0.0589644, 0.0591671, 0.194971, -0.979023, -1.23548, 0.416149, 0.465961 )
-texture_albedo = ExtResource( 1 )
-modulate = Color( 0.898039, 1, 1, 0.0941176 )
+transform = Transform3D(0.00479122, -0.980785, -0.195032, -0.998236, 0.00684877, -0.0589644, 0.0591671, 0.194971, -0.979023, -1.23548, 0.416149, 0.465961)
+texture_albedo = ExtResource("1")
+modulate = Color(0.898039, 1, 1, 0.0941176)
 upper_fade = 0.424264
 lower_fade = 8.07259
-script = null
 
 [node name="PaintNormalFade" type="Decal" parent="."]
-transform = Transform3D( -0.99636, 0.0718171, -0.0459127, 0.0613589, 0.978176, 0.19851, 0.0591671, 0.194971, -0.979023, -0.113795, 0.379248, -1.47887 )
+transform = Transform3D(-0.99636, 0.0718171, -0.0459127, 0.0613589, 0.978176, 0.19851, 0.0591671, 0.194971, -0.979023, -0.113795, 0.379248, -1.47887)
 layers = 3
-texture_albedo = ExtResource( 1 )
-modulate = Color( 0.00392157, 0.176471, 1, 1 )
+texture_albedo = ExtResource("1")
+modulate = Color(0.00392157, 0.176471, 1, 1)
 normal_fade = 0.5
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
 
 [node name="Paint2" type="Decal" parent="."]
-transform = Transform3D( 0.00479122, -0.980785, -0.195032, 0.992985, -0.018376, 0.116804, -0.118143, -0.194224, 0.973817, -1.23548, -0.34988, 1.48117 )
-texture_albedo = ExtResource( 1 )
-modulate = Color( 1, 0.870588, 0.552941, 0.0941176 )
+transform = Transform3D(0.00479122, -0.980785, -0.195032, 0.992985, -0.018376, 0.116804, -0.118143, -0.194224, 0.973817, -1.23548, -0.34988, 1.48117)
+texture_albedo = ExtResource("1")
+modulate = Color(1, 0.870588, 0.552941, 0.0941176)
 upper_fade = 0.424264
 lower_fade = 8.07259
-script = null
 
 [node name="Paint3" type="Decal" parent="."]
-transform = Transform3D( 0.00479122, -0.980785, -0.195032, 0.50152, 0.17109, -0.84806, 0.865133, -0.0937496, 0.492704, -1.23548, -0.0885205, 0.572399 )
-texture_albedo = ExtResource( 1 )
-modulate = Color( 1, 0.870588, 0.552941, 0.0941176 )
+transform = Transform3D(0.00479122, -0.980785, -0.195032, 0.50152, 0.17109, -0.84806, 0.865133, -0.0937496, 0.492704, -1.23548, -0.0885205, 0.572399)
+texture_albedo = ExtResource("1")
+modulate = Color(1, 0.870588, 0.552941, 0.0941176)
 upper_fade = 0.424264
 lower_fade = 8.07259
-script = null
 
 [node name="Paint4" type="Decal" parent="."]
-transform = Transform3D( 0.00479122, -0.980785, -0.195032, -0.571037, -0.162791, 0.804621, -0.82091, 0.107516, -0.560845, -1.25263, 0.392306, 1.20096 )
-texture_albedo = ExtResource( 1 )
-modulate = Color( 0.32549, 0.282353, 0.180392, 1 )
+transform = Transform3D(0.00479122, -0.980785, -0.195032, -0.571037, -0.162791, 0.804621, -0.82091, 0.107516, -0.560845, -1.25263, 0.392306, 1.20096)
+texture_albedo = ExtResource("1")
+modulate = Color(0.32549, 0.282353, 0.180392, 1)
 upper_fade = 0.424264
 lower_fade = 8.07259
-script = null
 
 [node name="WetPuddle" type="Decal" parent="."]
-transform = Transform3D( 0.96039, -0.271596, 0.0623459, 0.252375, 0.94261, 0.218618, -0.118143, -0.194224, 0.973817, 2.07392, -1.34988, 1.48117 )
-texture_albedo = ExtResource( 11 )
-texture_orm = ExtResource( 11 )
-modulate = Color( 1, 1, 1, 0.996078 )
+transform = Transform3D(0.96039, -0.271596, 0.0623459, 0.252375, 0.94261, 0.218618, -0.118143, -0.194224, 0.973817, 2.07392, -1.34988, 1.48117)
+texture_albedo = ExtResource("11")
+texture_orm = ExtResource("11")
+modulate = Color(1, 1, 1, 0.996078)
 albedo_mix = 0.0
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
 
 [node name="WetPuddleLarge" type="Decal" parent="."]
-transform = Transform3D( 0.988127, 0.0740056, 0.13464, -0.0982182, 0.978162, 0.183174, -0.118143, -0.194224, 0.973817, 1.5386, -1.52881, -1.36057 )
-extents = Vector3( 2, 2, 2 )
-texture_albedo = ExtResource( 11 )
-texture_orm = ExtResource( 11 )
-modulate = Color( 1, 1, 1, 0.996078 )
+transform = Transform3D(0.988127, 0.0740056, 0.13464, -0.0982182, 0.978162, 0.183174, -0.118143, -0.194224, 0.973817, 1.5386, -1.52881, -1.36057)
+extents = Vector3(2, 2, 2)
+texture_albedo = ExtResource("11")
+texture_orm = ExtResource("11")
+modulate = Color(1, 1, 1, 0.996078)
 albedo_mix = 0.0
 upper_fade = 0.0
 lower_fade = 0.0
 cull_mask = 1048573
-script = null
 
 [node name="WetPuddleLarge2" type="Decal" parent="."]
-transform = Transform3D( 0.595224, 0.205253, -0.776904, -0.0982182, 0.978162, 0.183174, 0.797535, -0.032724, 0.602385, 3.5386, -1.52881, -0.36057 )
-extents = Vector3( 2, 2, 2 )
-texture_albedo = ExtResource( 11 )
-texture_orm = ExtResource( 11 )
-modulate = Color( 1, 1, 1, 0.996078 )
+transform = Transform3D(0.595224, 0.205253, -0.776904, -0.0982182, 0.978162, 0.183174, 0.797535, -0.032724, 0.602385, 3.5386, -1.52881, -0.36057)
+extents = Vector3(2, 2, 2)
+texture_albedo = ExtResource("11")
+texture_orm = ExtResource("11")
+modulate = Color(1, 1, 1, 0.996078)
 albedo_mix = 0.0
 upper_fade = 0.0
 lower_fade = 0.0
 cull_mask = 1048573
-script = null
 
 [node name="WetPuddleLarge3" type="Decal" parent="."]
-transform = Transform3D( 0.978319, 0.200848, 0.0505067, -0.206292, 0.92354, 0.323292, 0.0182883, -0.326703, 0.94495, 1.9431, -1.52881, 1.00221 )
-extents = Vector3( 2, 2, 2 )
-texture_albedo = ExtResource( 11 )
-texture_orm = ExtResource( 11 )
-modulate = Color( 1, 1, 1, 0.996078 )
+transform = Transform3D(0.978319, 0.200848, 0.0505067, -0.206292, 0.92354, 0.323292, 0.0182883, -0.326703, 0.94495, 1.9431, -1.52881, 1.00221)
+extents = Vector3(2, 2, 2)
+texture_albedo = ExtResource("11")
+texture_orm = ExtResource("11")
+modulate = Color(1, 1, 1, 0.996078)
 albedo_mix = 0.0
 upper_fade = 0.0
 lower_fade = 0.0
 cull_mask = 1048573
-script = null
 
 [node name="NormalOnlyDecal" type="Decal" parent="."]
-transform = Transform3D( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.07265, -0.683423, 2.65005 )
-extents = Vector3( 0.25, 1, 0.25 )
-texture_albedo = ExtResource( 8 )
-texture_normal = ExtResource( 7 )
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.07265, -0.683423, 2.65005)
+extents = Vector3(0.25, 1, 0.25)
+texture_albedo = ExtResource("8")
+texture_normal = ExtResource("7")
 albedo_mix = 0.0
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
 
 [node name="NormalOnlyDecalLowAlpha" type="Decal" parent="."]
-transform = Transform3D( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.07265, -0.683423, 3.15005 )
-extents = Vector3( 0.25, 1, 0.25 )
-texture_albedo = ExtResource( 8 )
-texture_normal = ExtResource( 7 )
-modulate = Color( 1, 1, 1, 0.25098 )
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.07265, -0.683423, 3.15005)
+extents = Vector3(0.25, 1, 0.25)
+texture_albedo = ExtResource("8")
+texture_normal = ExtResource("7")
+modulate = Color(1, 1, 1, 0.25098)
 albedo_mix = 0.0
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
 
 [node name="ORMNormalOnlyDecal" type="Decal" parent="."]
-transform = Transform3D( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.07265, -0.183423, 3.15005 )
-extents = Vector3( 0.25, 1, 0.25 )
-texture_albedo = ExtResource( 8 )
-texture_normal = ExtResource( 7 )
-texture_orm = ExtResource( 8 )
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.07265, -0.183423, 3.15005)
+extents = Vector3(0.25, 1, 0.25)
+texture_albedo = ExtResource("8")
+texture_normal = ExtResource("7")
+texture_orm = ExtResource("8")
 albedo_mix = 0.0
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
 
 [node name="ORMOnlyDecal" type="Decal" parent="."]
-transform = Transform3D( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.07265, -0.183423, 2.65005 )
-extents = Vector3( 0.25, 1, 0.25 )
-texture_albedo = ExtResource( 8 )
-texture_orm = ExtResource( 8 )
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.07265, -0.183423, 2.65005)
+extents = Vector3(0.25, 1, 0.25)
+texture_albedo = ExtResource("8")
+texture_orm = ExtResource("8")
 albedo_mix = 0.0
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
 
 [node name="DetailDecal2" type="Decal" parent="."]
-transform = Transform3D( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.1, -0.7, 0.3 )
-extents = Vector3( 0.25, 1, 0.25 )
-texture_albedo = ExtResource( 8 )
-texture_normal = ExtResource( 7 )
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.1, -0.7, 0.3)
+extents = Vector3(0.25, 1, 0.25)
+texture_albedo = ExtResource("8")
+texture_normal = ExtResource("7")
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
 
 [node name="DetailDecal3" type="Decal" parent="."]
-transform = Transform3D( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.073, 0.7, 1.7 )
-extents = Vector3( 0.25, 1, 0.25 )
-texture_albedo = ExtResource( 8 )
-texture_normal = ExtResource( 7 )
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.073, 0.7, 1.7)
+extents = Vector3(0.25, 1, 0.25)
+texture_albedo = ExtResource("8")
+texture_normal = ExtResource("7")
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
 
 [node name="DetailDecal4" type="Decal" parent="."]
-transform = Transform3D( -4.37114e-08, -1, 0, 0.707107, -3.09086e-08, 0.707107, -0.707107, 3.09086e-08, 0.707107, -1.073, 0.3, 1.3 )
-extents = Vector3( 0.25, 1, 0.25 )
-texture_albedo = ExtResource( 10 )
-texture_normal = ExtResource( 9 )
+transform = Transform3D(-4.37114e-08, -1, 0, 0.707107, -3.09086e-08, 0.707107, -0.707107, 3.09086e-08, 0.707107, -1.073, 0.3, 1.3)
+extents = Vector3(0.25, 1, 0.25)
+texture_albedo = ExtResource("10")
+texture_normal = ExtResource("9")
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
 
 [node name="DetailDecal5" type="Decal" parent="."]
-transform = Transform3D( -4.37114e-08, -1, 0, 0.707107, -3.09086e-08, 0.707107, -0.707107, 3.09086e-08, 0.707107, -1.073, -0.3, 0.7 )
-extents = Vector3( 0.25, 1, 0.25 )
-texture_albedo = ExtResource( 10 )
-texture_normal = ExtResource( 9 )
+transform = Transform3D(-4.37114e-08, -1, 0, 0.707107, -3.09086e-08, 0.707107, -0.707107, 3.09086e-08, 0.707107, -1.073, -0.3, 0.7)
+extents = Vector3(0.25, 1, 0.25)
+texture_albedo = ExtResource("10")
+texture_normal = ExtResource("9")
 upper_fade = 0.0
 lower_fade = 0.0
-script = null
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D( -0.773862, 0.439551, -0.455997, 0, 0.719971, 0.694004, 0.633355, 0.537063, -0.557158, -2.1275, 3.23794, -2.59948 )
-light_bake_mode = 2
-shadow_bias = 0.005
-shadow_blur = 2.0
-script = null
 
 [node name="PoolCaustics" type="Decal" parent="."]
-transform = Transform3D( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -6.00856, 2.15045, -20.0479 )
-visible = false
-extents = Vector3( 1.5, 1.5, 1.5 )
-texture_emission = ExtResource( 2 )
+transform = Transform3D(-0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -6.00856, 2.15045, -20.0479)
+extents = Vector3(1.5, 1.5, 1.5)
+texture_emission = ExtResource("2")
 emission_energy = 0.08
 normal_fade = 0.1
 upper_fade = 0.0
 lower_fade = 2.0
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="PoolCaustics2" type="Decal" parent="."]
-transform = Transform3D( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -4.50856, 2.15045, -22.6479 )
-visible = false
-extents = Vector3( 1.5, 1.5, 1.5 )
-texture_emission = ExtResource( 2 )
+transform = Transform3D(-0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -4.50856, 2.15045, -22.6479)
+extents = Vector3(1.5, 1.5, 1.5)
+texture_emission = ExtResource("2")
 emission_energy = 0.08
 normal_fade = 0.1
 upper_fade = 0.0
 lower_fade = 2.0
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="PoolCaustics3" type="Decal" parent="."]
-transform = Transform3D( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -7.51955, 2.15045, -24.371 )
-visible = false
-extents = Vector3( 1.5, 1.5, 1.5 )
-texture_emission = ExtResource( 2 )
+transform = Transform3D(-0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -7.51955, 2.15045, -24.371)
+extents = Vector3(1.5, 1.5, 1.5)
+texture_emission = ExtResource("2")
 emission_energy = 0.08
 normal_fade = 0.1
 upper_fade = 2.0
 lower_fade = 1e-05
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="PoolCaustics4" type="Decal" parent="."]
-transform = Transform3D( -0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -8.99316, 2.15045, -21.7737 )
-visible = false
-extents = Vector3( 1.5, 1.5, 1.5 )
-texture_emission = ExtResource( 2 )
+transform = Transform3D(-0.749999, -0.433013, -0.5, 0.5, -0.866025, 0, -0.433012, -0.25, 0.866025, -8.99316, 2.15045, -21.7737)
+extents = Vector3(1.5, 1.5, 1.5)
+texture_emission = ExtResource("2")
 emission_energy = 0.08
 normal_fade = 0.1
 upper_fade = 2.0
 lower_fade = 1e-05
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="FPSLabel" type="Label" parent="."]
 visible = false
@@ -597,207 +548,163 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 87.0
 offset_bottom = 48.0
-custom_font_sizes/font_size = 28
-structured_text_bidi_override_options = [  ]
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_font_sizes/font_size = 28
+script = ExtResource("4")
 
 [node name="PoolWall1" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -31 )
-gi_mode = 1
-mesh = SubResource( 20 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -31)
+mesh = SubResource("20")
 
 [node name="PoolWall2" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -17 )
-gi_mode = 1
-mesh = SubResource( 20 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -17)
+mesh = SubResource("20")
 
 [node name="PoolWall3" type="MeshInstance3D" parent="."]
-transform = Transform3D( -4.92785e-09, 0, 1, 0, 1, 0, -1, 0, 4.92785e-09, 2, 1, -24 )
-gi_mode = 1
-mesh = SubResource( 20 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(-4.92785e-09, 0, 1, 0, 1, 0, -1, 0, 4.92785e-09, 2, 1, -24)
+mesh = SubResource("20")
 
 [node name="PoolWall4" type="MeshInstance3D" parent="."]
-transform = Transform3D( -4.92785e-09, 0, 1, 0, 1, 0, -1, 0, 4.92785e-09, -16, 1, -24 )
-gi_mode = 1
-mesh = SubResource( 20 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(-4.92785e-09, 0, 1, 0, 1, 0, -1, 0, 4.92785e-09, -16, 1, -24)
+mesh = SubResource("20")
 
 [node name="PoolCeiling" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9, 2.9, -24 )
-gi_mode = 1
-mesh = SubResource( 21 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9, 2.9, -24)
+mesh = SubResource("21")
 
 [node name="PoolWater" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.4, -24 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -0.4, -24)
 layers = 524288
-gi_mode = 1
-mesh = SubResource( 25 )
-surface_material_override/0 = null
-script = null
+mesh = SubResource("25")
 
 [node name="PoolLaser" type="Decal" parent="."]
-transform = Transform3D( -0.95777, -0.261221, 0.120168, 0.182576, -0.229638, 0.955999, -0.222132, 0.937566, 0.267633, -11.1226, 0.47306, -23.3261 )
-extents = Vector3( 5.758, 0.1, 8.169 )
-texture_emission = SubResource( 27 )
+transform = Transform3D(-0.95777, -0.261221, 0.120168, 0.182576, -0.229638, 0.955999, -0.222132, 0.937566, 0.267633, -11.1226, 0.47306, -23.3261)
+extents = Vector3(5.758, 0.1, 8.169)
+texture_emission = SubResource("27")
 emission_energy = 3.0
 upper_fade = 2.0
 lower_fade = 2.0
 cull_mask = 524287
-script = null
 
 [node name="PoolAreaFog" type="Decal" parent="."]
-transform = Transform3D( 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -4.29437, 0.8957, -24.1948 )
-extents = Vector3( 2.442, 5.346, 7.723 )
-texture_emission = ExtResource( 6 )
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -4.29437, 0.8957, -24.1948)
+extents = Vector3(2.442, 5.346, 7.723)
+texture_emission = ExtResource("6")
 upper_fade = 0.0
 lower_fade = 2.0
-script = null
 
 [node name="FakeLightCyan" type="Decal" parent="."]
-transform = Transform3D( 0.986404, 0.0502488, -0.156469, 0, 0.952108, 0.305761, 0.16434, -0.301604, 0.939163, -11.1255, -0.892838, -15.6301 )
-texture_albedo = ExtResource( 5 )
-modulate = Color( 0, 100, 50, 0.01 )
+transform = Transform3D(0.986404, 0.0502488, -0.156469, 0, 0.952108, 0.305761, 0.16434, -0.301604, 0.939163, -11.1255, -0.892838, -15.6301)
+texture_albedo = ExtResource("5")
+modulate = Color(0, 100, 50, 0.01)
 upper_fade = 1.0
 lower_fade = 1.0
-script = null
 
 [node name="FakeLightWhite" type="Decal" parent="."]
-transform = Transform3D( 0.986404, 0.0502488, -0.156469, 0, 0.952108, 0.305761, 0.16434, -0.301604, 0.939163, -9.12549, -0.892838, -15.6301 )
-texture_albedo = ExtResource( 5 )
+transform = Transform3D(0.986404, 0.0502488, -0.156469, 0, 0.952108, 0.305761, 0.16434, -0.301604, 0.939163, -9.12549, -0.892838, -15.6301)
+texture_albedo = ExtResource("5")
 upper_fade = 1.0
 lower_fade = 1.0
-script = null
 
 [node name="Capsule" type="MeshInstance3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017 )
-mesh = SubResource( 28 )
-surface_material_override/0 = SubResource( 31 )
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8303, 0.0498247, -16.4017)
+mesh = SubResource("28")
+surface_material_override/0 = SubResource("31")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D( 0.999791, 0.00480612, -0.0198598, 0, 0.971944, 0.235213, 0.020433, -0.235164, 0.971741, -7.20293, -0.591367, -15.564 )
-light_color = Color( 0, 1, 0.666667, 1 )
+transform = Transform3D(0.999791, 0.00480612, -0.0198598, 0, 0.971944, 0.235213, 0.020433, -0.235164, 0.971741, -7.20293, -0.591367, -15.564)
+light_color = Color(0, 1, 0.666667, 1)
 light_energy = 0.1
 omni_range = 1.3
-script = null
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33894, -0.76884, -0.0555387 )
-extents = Vector3( 4, 4, 4 )
-origin_offset = Vector3( -0.298, 0.586, 1 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33894, -0.76884, -0.0555387)
+extents = Vector3(4, 4, 4)
+origin_offset = Vector3(-0.298, 0.586, 1)
 box_projection = true
 enable_shadows = true
-script = null
 
 [node name="Coil" type="MeshInstance3D" parent="."]
-transform = Transform3D( -0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917 )
-mesh = SubResource( 33 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(-0.658519, 0.138492, -0.739711, 0, 0.982921, 0.184027, 0.752564, 0.121185, -0.647272, -10.7808, 1.5441, -23.1917)
+mesh = SubResource("33")
 
 [node name="Car" type="MeshInstance3D" parent="."]
-transform = Transform3D( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6 )
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, -0.488295, -6)
 layers = 2
-mesh = SubResource( 35 )
-surface_material_override/0 = null
-script = null
+mesh = SubResource("35")
 
 [node name="Decal" type="Decal" parent="Car"]
-transform = Transform3D( 8.74228e-08, -1, -4.37114e-08, -1, -8.74228e-08, -1.91069e-15, -2.68657e-16, 4.37114e-08, -1, 0.511465, 0, 0 )
-extents = Vector3( 1, 1, 0.5 )
-texture_albedo = ExtResource( 13 )
+transform = Transform3D(8.74228e-08, -1, -4.37114e-08, -1, -8.74228e-08, -1.91069e-15, -2.68657e-16, 4.37114e-08, -1, 0.511465, 0, 0)
+extents = Vector3(1, 1, 0.5)
+texture_albedo = ExtResource("13")
 upper_fade = 1.0
 lower_fade = 1.0
 cull_mask = 1048573
-script = null
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -43 )
-size = Vector3( 16, 6, 16 )
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -43)
+size = Vector3(16, 6, 16)
 
 [node name="AreaFogNoiseColor" type="Decal" parent="CSGBox3D"]
-transform = Transform3D( -1, 1.42109e-14, 3.82137e-15, 1.42109e-14, 1, -8.74228e-08, -3.82137e-15, -8.74228e-08, -1, 0, -0.7, 0 )
-extents = Vector3( 7.99, 4, 7.99 )
-texture_emission = SubResource( 37 )
+transform = Transform3D(-1, 1.42109e-14, 3.82137e-15, 1.42109e-14, 1, -8.74228e-08, -3.82137e-15, -8.74228e-08, -1, 0, -0.7, 0)
+extents = Vector3(7.99, 4, 7.99)
+texture_emission = SubResource("37")
 emission_energy = 5.0
 upper_fade = 2.0
 lower_fade = 0.0
-script = null
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D"]
-transform = Transform3D( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.2, 0 )
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.2, 0)
 operation = 2
 radius = 7.5
 height = 6.0
 sides = 64
 cone = true
-script = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CSGBox3D"]
-transform = Transform3D( 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 2.6, 0 )
-mesh = SubResource( 38 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 2.6, 0)
+mesh = SubResource("38")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="CSGBox3D"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 2.3 )
-mesh = SubResource( 38 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 2.3)
+mesh = SubResource("38")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="CSGBox3D"]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -4 )
-mesh = SubResource( 38 )
-surface_material_override/0 = null
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -4)
+mesh = SubResource("38")
 
 [node name="LogoAlbedo" type="Decal" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.155, 0, 21 )
-extents = Vector3( 4, 4, 4 )
-texture_albedo = ExtResource( 14 )
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.155, 0, 21)
+extents = Vector3(4, 4, 4)
+texture_albedo = ExtResource("14")
+texture_normal = ExtResource("7")
+texture_orm = ExtResource("14")
+texture_emission = ExtResource("14")
+albedo_mix = 0.0
 
 [node name="LogoAlbedoOrm" type="Decal" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.155, 0, 21 )
-extents = Vector3( 4, 4, 4 )
-texture_albedo = ExtResource( 14 )
-texture_orm = ExtResource( 14 )
-script = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.155, 0, 21)
+extents = Vector3(4, 4, 4)
+texture_albedo = ExtResource("14")
+texture_orm = ExtResource("14")
 
 [node name="LogoOrmOnly" type="Decal" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15497, 0, 21 )
-extents = Vector3( 4, 4, 4 )
-texture_albedo = ExtResource( 14 )
-texture_orm = ExtResource( 14 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15497, 0, 21)
+extents = Vector3(4, 4, 4)
+texture_albedo = ExtResource("14")
+texture_orm = ExtResource("14")
 albedo_mix = 0.0
-script = null
 
 [node name="LogoEmission" type="Decal" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84503, 0, 21 )
-extents = Vector3( 4, 4, 4 )
-texture_albedo = ExtResource( 14 )
-texture_emission = ExtResource( 14 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84503, 0, 21)
+extents = Vector3(4, 4, 4)
+texture_albedo = ExtResource("14")
+texture_emission = ExtResource("14")
 albedo_mix = 0.0
-script = null
 
 [node name="LogoEmissionOrm" type="Decal" parent="."]
-transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.845, 0, 21 )
-extents = Vector3( 4, 4, 4 )
-texture_albedo = ExtResource( 14 )
-texture_orm = ExtResource( 14 )
-texture_emission = ExtResource( 14 )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.845, 0, 21)
+extents = Vector3(4, 4, 4)
+texture_albedo = ExtResource("14")
+texture_orm = ExtResource("14")
+texture_emission = ExtResource("14")
 albedo_mix = 0.0
-script = null
